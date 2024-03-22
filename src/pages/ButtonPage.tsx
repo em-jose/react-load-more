@@ -5,7 +5,9 @@ export const ButtonPage = () => {
     return (
         <>
             <AppLayout>
-                <h2 className="text-2xl">ButtonPage</h2>
+                <div className="flex justify-center">
+                    <h2 className="text-2xl">Load more with button</h2>
+                </div>
                 <CardsList />
             </AppLayout>
         </>

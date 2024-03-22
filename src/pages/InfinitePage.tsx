@@ -5,7 +5,9 @@ export const InfinitePage = () => {
     return (
         <>
             <AppLayout>
-                <h2 className="text-2xl">InfinitePage</h2>
+                <div className="flex justify-center">
+                    <h2 className="text-2xl">Infinite scroll</h2>
+                </div>
                 <CardsList />
             </AppLayout>
         </>
