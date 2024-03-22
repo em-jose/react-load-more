@@ -7,7 +7,10 @@ export const Header = () => {
                 <h1 className="text-2xl uppercase">Load More App</h1>
                 <Link to="/button">Load more with button</Link>
                 <Link to="/infinite">Infinite scroll</Link>
-                <a href="https://github.com/" target="_blank">
+                <a
+                    href="https://github.com/em-jose/react-load-more"
+                    target="_blank"
+                >
                     Github
                 </a>
             </div>
