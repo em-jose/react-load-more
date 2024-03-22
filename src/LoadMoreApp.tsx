@@ -1,7 +1,5 @@
+import { AppRouter } from "./routes/AppRouter";
+
 export const LoadMoreApp = () => {
-    return (
-        <>
-            <h1>LoadMoreApp</h1>
-        </>
-    );
+    return <AppRouter />;
 };
