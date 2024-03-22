@@ -8,8 +8,6 @@ export const CardsList = () => {
 
     return (
         <>
-            <h2>Products list</h2>
-
             {productList?.products && (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-5">
                     {productList.products.map((product: Product) => (
