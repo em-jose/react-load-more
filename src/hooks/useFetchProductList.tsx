@@ -6,6 +6,7 @@ export const useFetchProductList = () => {
     const [productList, setProductList] = useState<ProductList>();
     const [currentSkip, setCurrentSkip] = useState<number>(0);
     const [endReached, setEndReached] = useState<boolean>(false);
+    const [isLoading, setIsLoading] = useState(false);
 
     const getProductList = async (
         limit: number = PRODUCTS_LIMIT,
@@ -22,6 +23,8 @@ export const useFetchProductList = () => {
     const loadMoreProducts = async () => {
         if (endReached) return false;
 
+        setIsLoading(true);
+
         const skip = PRODUCTS_LIMIT + currentSkip;
         const productsListApi = await getProductList(PRODUCTS_LIMIT, skip);
         const productsEndReached = productsListApi.products.length
@@ -37,17 +40,21 @@ export const useFetchProductList = () => {
         setCurrentSkip(skip);
         setProductList(productsListApi);
         setEndReached(productsEndReached);
+        setIsLoading(false);
     };
 
     useEffect(() => {
-        getProductList().then((productListApi) =>
-            setProductList(productListApi)
-        );
+        setIsLoading(true);
+        getProductList().then((productListApi) => {
+            setProductList(productListApi);
+            setIsLoading(false);
+        });
     }, []);
 
     return {
         productList,
         endReached,
+        isLoading,
         loadMoreProducts,
     };
 };
