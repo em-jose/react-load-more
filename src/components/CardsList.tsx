@@ -2,9 +2,11 @@ import { Card } from "./Card";
 import { useFetchProductList } from "@/hooks/useFetchProductList";
 import { LoadMoreButton } from "@/components/LoadMoreButton";
 import { Message } from "@/components/Message";
+import { LoadingSpinner } from "@components/LoadingSpinner";
 
 export const CardsList = () => {
-    const { productList, endReached, loadMoreProducts } = useFetchProductList();
+    const { productList, endReached, isLoading, loadMoreProducts } =
+        useFetchProductList();
 
     return (
         <>
@@ -16,14 +18,22 @@ export const CardsList = () => {
                 </div>
             )}
 
+            {isLoading && (
+                <div className="flex justify-center my-5">
+                    <LoadingSpinner />
+                </div>
+            )}
+
             {endReached && (
                 <Message text="There is no more products" type="error" />
             )}
 
-            <LoadMoreButton
-                loadMoreProducts={loadMoreProducts}
-                endReached={endReached}
-            />
+            <div className="flex justify-center">
+                <LoadMoreButton
+                    loadMoreProducts={loadMoreProducts}
+                    endReached={endReached}
+                />
+            </div>
         </>
     );
 };
