@@ -1,11 +1,14 @@
 import { Header } from "@/components/Header";
+import { ThemeProvider } from "@/components/ui/theme-provider";
 
 export const AppLayout = ({ children }: AppLayoutType) => {
     return (
         <>
-            <Header />
+            <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+                <Header />
 
-            <main className="p-5">{children}</main>
+                <main className="p-5">{children}</main>
+            </ThemeProvider>
         </>
     );
 };
