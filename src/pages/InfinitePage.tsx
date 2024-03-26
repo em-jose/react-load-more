@@ -1,4 +1,4 @@
-import { CardsList } from "@/components/CardsList";
+import { CardsListInfinite } from "@/components/CardsListInfinite";
 import { AppLayout } from "@/components/AppLayout";
 
 export const InfinitePage = () => {
@@ -8,7 +8,7 @@ export const InfinitePage = () => {
                 <div className="flex justify-center">
                     <h2 className="text-2xl">Infinite scroll</h2>
                 </div>
-                <CardsList />
+                <CardsListInfinite />
             </AppLayout>
         </>
     );
