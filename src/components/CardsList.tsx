@@ -1,8 +1,8 @@
-import { Card } from "./Card";
-import { useFetchProductList } from "@/hooks/useFetchProductList";
-import { LoadMoreButton } from "@/components/LoadMoreButton";
-import { Message } from "@/components/Message";
+import { Button } from "@/components/ui/button";
 import { LoadingSpinner } from "@components/LoadingSpinner";
+import { Message } from "@/components/Message";
+import { ProductCard } from "@/components/ProductCard";
+import { useFetchProductList } from "@/hooks/useFetchProductList";
 
 export const CardsList = () => {
     const { productList, endReached, isLoading, loadMoreProducts } =
@@ -13,7 +13,7 @@ export const CardsList = () => {
             {productList?.products && (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-5">
                     {productList.products.map((product: Product) => (
-                        <Card key={product.id} {...product} />
+                        <ProductCard key={product.id} {...product} />
                     ))}
                 </div>
             )}
@@ -29,10 +29,12 @@ export const CardsList = () => {
             )}
 
             <div className="flex justify-center">
-                <LoadMoreButton
-                    loadMoreProducts={loadMoreProducts}
-                    endReached={endReached}
-                />
+                <Button
+                    onClick={() => loadMoreProducts()}
+                    disabled={endReached}
+                >
+                    Load more products
+                </Button>
             </div>
         </>
     );

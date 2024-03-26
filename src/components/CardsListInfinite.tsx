@@ -1,7 +1,7 @@
-import { Card } from "./Card";
-import { useFetchProductList } from "@/hooks/useFetchProductList";
-import { Message } from "@/components/Message";
 import { LoadingSpinner } from "@components/LoadingSpinner";
+import { Message } from "@/components/Message";
+import { ProductCard } from "./ProductCard";
+import { useFetchProductList } from "@/hooks/useFetchProductList";
 import InfiniteScroll from "react-infinite-scroll-component";
 
 export const CardsListInfinite = () => {
@@ -28,7 +28,7 @@ export const CardsListInfinite = () => {
                 >
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-5">
                         {productList?.products.map((product: Product) => (
-                            <Card key={product.id} {...product} />
+                            <ProductCard key={product.id} {...product} />
                         ))}
                     </div>
                 </InfiniteScroll>
