@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { ModeToggle } from "./ui/mode-toggle";
 
 export const Header = () => {
     return (
@@ -6,7 +7,7 @@ export const Header = () => {
             <div className="flex justify-center">
                 <h1 className="text-2xl uppercase">Load More App</h1>
             </div>
-            <div className="flex gap-2 justify-center">
+            <div className="flex gap-2 justify-center items-center">
                 <Link to="/button" className="uppercase underline">
                     Load more with button
                 </Link>
@@ -20,6 +21,9 @@ export const Header = () => {
                 >
                     Github
                 </a>
+                <div className="absolute top-0 right-0 m-5">
+                    <ModeToggle />
+                </div>
             </div>
         </header>
     );
