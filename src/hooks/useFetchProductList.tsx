@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 const PRODUCTS_LIMIT = 10;
+const API_BASE_URL = "https://dummyjson.com/products";
 
 export const useFetchProductList = () => {
     const [productList, setProductList] = useState<ProductList>();
@@ -12,9 +13,7 @@ export const useFetchProductList = () => {
         limit: number = PRODUCTS_LIMIT,
         skip: number = currentSkip
     ): Promise<ProductList> => {
-        const resp = await fetch(
-            `https://dummyjson.com/products?limit=${limit}&skip=${skip}`
-        );
+        const resp = await fetch(`${API_BASE_URL}?limit=${limit}&skip=${skip}`);
         const data = await resp.json();
 
         return data;
