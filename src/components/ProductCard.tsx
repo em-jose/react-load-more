@@ -20,7 +20,7 @@ export const ProductCard = (product: Product) => {
                     <div className="flex justify-center">
                         <img
                             src={product.thumbnail}
-                            alt=""
+                            alt={`Image showing the product ${product.title}`}
                             className="rounded max-h-36"
                         />
                     </div>
