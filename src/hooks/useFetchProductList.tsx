@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const PRODUCTS_LIMIT = 10;
+const PRODUCTS_LIMIT = 12;
 const API_BASE_URL = "https://dummyjson.com/products";
 
 export const useFetchProductList = () => {

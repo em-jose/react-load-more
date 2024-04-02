@@ -11,7 +11,7 @@ export const CardsList = () => {
     return (
         <>
             {productList?.products && (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-5">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-5">
                     {productList.products.map((product: Product) => (
                         <ProductCard key={product.id} {...product} />
                     ))}
