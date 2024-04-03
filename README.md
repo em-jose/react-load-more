@@ -11,3 +11,5 @@ Application created for the sole purpose of practicing different technologies an
 * Test [Animate.css](https://animate.style/)
 
 The API that I have used to create the application has been https://dummyjson.com/
+
+You can try the app here: https://reactloadmore.vercel.app/
