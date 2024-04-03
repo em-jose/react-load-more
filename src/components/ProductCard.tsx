@@ -15,7 +15,7 @@ export const ProductCard = (product: Product) => {
 
     return (
         <>
-            <Card>
+            <Card className="animate__animated animate__fadeIn">
                 <CardHeader className="pb-0">
                     <div className="flex justify-center">
                         <img
