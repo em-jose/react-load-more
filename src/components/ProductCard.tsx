@@ -26,7 +26,7 @@ export const ProductCard = (product: Product) => {
                     </div>
                     <CardTitle className="text-lg">{product.title}</CardTitle>
                 </CardHeader>
-                <CardContent className="py-0">
+                <CardContent className="py-2">
                     <Rating rating={product.rating} />
                 </CardContent>
                 <CardFooter className="flex gap-2">
