@@ -20,7 +20,7 @@ export const useFetchProductList = () => {
     };
 
     const loadMoreProducts = async () => {
-        if (endReached) return false;
+        if (endReached || !productList) return false;
 
         setIsLoading(true);
 
